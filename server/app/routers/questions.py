@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """题库管理路由：列表检索、详情、增删改、查重、题型统计、导出 CSV。
 
 注意路由声明顺序：/stats、/export、/check-duplicate 这类静态路径

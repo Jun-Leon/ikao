@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """表格题库读写（CSV / Excel）。
 
 设计目标：让「下载模板 -> 填写 -> 上传」与「导出 CSV」共用同一套列定义，

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """文本归一化：用于题干去重比较。
 
 注意：这里**不改动**题目原文，只是另外生成一份「归一化副本」用于比较，

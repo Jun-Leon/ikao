@@ -11,6 +11,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import socket
 import sys
@@ -109,12 +110,66 @@ def _open_browser_later(port: int) -> None:
         pass
 
 
+def _author_info() -> dict:
+    """署名信息（来源：app.about，保证全项目一致）。"""
+    from app.about import (
+        AUTHOR_NAME,
+        COPYRIGHT_LINE,
+        GITHUB_HANDLE,
+        REPOSITORY,
+        SOFTWARE_NAME,
+        SPDX_LICENSE,
+        VERSION,
+    )
+
+    return {
+        "software": SOFTWARE_NAME,
+        "version": VERSION,
+        "author": AUTHOR_NAME,
+        "github": GITHUB_HANDLE,
+        "copyright": COPYRIGHT_LINE,
+        "license": SPDX_LICENSE,
+        "repository": REPOSITORY,
+    }
+
+
+def _print_banner(info: dict) -> None:
+    line = "=" * 62
+    print(line)
+    print(f"  {info['software']} V{info['version']}")
+    print(f"  {info['copyright']}")
+    print(f"  开源许可 {info['license']} · {info['repository']}")
+    print(line)
+    print(f"  {APP_TITLE}  正在启动，请稍候 ...")
+    print(line)
+
+
+def _write_about_files(info: dict) -> None:
+    """在可执行文件同级目录生成 ABOUT.txt 与 version.json 作为产物记号。"""
+    root = _writable_root()
+    about_text = (
+        f"{info['software']} V{info['version']}\n"
+        f"{info['copyright']}\n"
+        f"开源许可：{info['license']}\n"
+        f"项目地址：{info['repository']}\n\n"
+        "本程序为离线单机刷题工具，所有数据仅保存在本机 data 目录，不联网、不上传。\n"
+    )
+    version_payload = json.dumps(info, ensure_ascii=False, indent=2)
+    for name, content in (("ABOUT.txt", about_text), ("version.json", version_payload)):
+        target = root / name
+        try:
+            if not target.is_file() or target.read_text(encoding="utf-8") != content:
+                target.write_text(content, encoding="utf-8")
+        except OSError:  # noqa: BLE001 只读目录等场景不影响启动
+            pass
+
+
 def main() -> None:
     port = _pick_port(int(os.environ.get("IKAO_PORT", PREFERRED_PORT)))
 
-    print("=" * 62)
-    print(f"  {APP_TITLE}  正在启动，请稍候 ...")
-    print("=" * 62)
+    info = _author_info()
+    _print_banner(info)
+    _write_about_files(info)
 
     _seed_database()
 

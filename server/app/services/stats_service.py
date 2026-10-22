@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """刷题统计看板服务：概览、题型/来源/模式分布、练习趋势、高频错题。
 
 统计口径说明：

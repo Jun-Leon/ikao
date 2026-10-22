@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+// SPDX-License-Identifier: MIT
+
 /**
  * 题型相关的常量与展示辅助，供列表页 / 表单页 / 后续刷题页共用。
  * 取值与后端 models.py 中的 QUESTION_TYPES 保持一致。

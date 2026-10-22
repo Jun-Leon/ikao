@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """题库 JSON 解析（宽进严出）。
 
 「宽进」：兼容常见的题库 JSON 写法，字段名、题型名、选项结构、答案写法都尽量容错。

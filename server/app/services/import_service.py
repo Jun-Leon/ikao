@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """题库导入服务。
 
 流程：解析来源（JSON / CSV / Excel）-> 逐题归一化 -> 相似度去重 -> 入库

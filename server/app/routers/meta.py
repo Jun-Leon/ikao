@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """基础信息路由：健康检查、前端启动元信息。"""
 
 from __future__ import annotations
@@ -6,6 +8,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
+from ..about import AUTHOR_NAME, COPYRIGHT_LINE, REPOSITORY
 from ..config import settings
 from ..database import get_db
 from ..deps import get_current_profile
@@ -36,4 +39,7 @@ def meta(db: Session = Depends(get_db)) -> MetaOut:
         question_count=count_questions(db),
         current_profile_id=profile.id,
         current_profile_name=profile.name,
+        author=AUTHOR_NAME,
+        copyright=COPYRIGHT_LINE,
+        repository=REPOSITORY,
     )

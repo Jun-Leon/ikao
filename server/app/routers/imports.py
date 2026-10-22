@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """导入路由：题库导入（JSON / CSV / Excel）+ 模板下载 + 导入日志查询。"""
 
 from __future__ import annotations

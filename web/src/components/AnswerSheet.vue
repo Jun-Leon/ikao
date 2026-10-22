@@ -1,3 +1,7 @@
+<!--
+  SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+  SPDX-License-Identifier: MIT
+-->
 <template>
   <div class="answer-sheet">
     <div class="sheet-head">

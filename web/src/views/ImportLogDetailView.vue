@@ -1,3 +1,7 @@
+<!--
+  SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+  SPDX-License-Identifier: MIT
+-->
 <template>
   <div class="page">
     <el-page-header class="header" @back="router.back()">

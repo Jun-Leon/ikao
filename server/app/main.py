@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """FastAPI 应用入口。
 
 - 开发模式：后端只提供 /api/*，前端用 vite dev server（端口 5173）联调
@@ -13,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+from .about import POWERED_BY, SOFTWARE_NAME
 from .config import settings
 from .database import init_db
 from .routers import imports, meta, practice, profiles, questions, stats
@@ -21,9 +24,9 @@ WEB_DIST = settings.web_dist_dir
 INDEX_HTML = WEB_DIST / "index.html"
 
 app = FastAPI(
-    title=settings.app_name,
+    title=SOFTWARE_NAME,
     version=settings.version,
-    description="离线单机刷题工具后端 API",
+    description=f"离线单机刷题工具后端 API · {POWERED_BY}",
 )
 
 app.add_middleware(
@@ -33,6 +36,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.middleware("http")
+async def _add_signature_header(request, call_next):
+    """为所有响应附加署名响应头，便于溯源构建产物。"""
+    response = await call_next(request)
+    response.headers["X-Powered-By"] = POWERED_BY
+    return response
 
 
 @app.on_event("startup")

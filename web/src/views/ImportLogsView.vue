@@ -1,3 +1,7 @@
+<!--
+  SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+  SPDX-License-Identifier: MIT
+-->
 <template>
   <div class="page">
     <h2 class="page-title">导入日志</h2>

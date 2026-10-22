@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+// SPDX-License-Identifier: MIT
+
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'

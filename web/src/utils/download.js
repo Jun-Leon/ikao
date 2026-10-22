@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+// SPDX-License-Identifier: MIT
+
 /**
  * 把接口返回的 Blob 保存成本地文件。
  * @param {Blob} blob 后端二进制响应

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """统计看板路由：一次返回概览、分布、趋势与高频错题。
 
 数据全部限定在「当前档案」范围内，切换档案即切换统计口径。

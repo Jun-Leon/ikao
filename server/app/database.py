@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """数据库连接与会话管理（SQLAlchemy 2.x + SQLite）。"""
 
 from __future__ import annotations

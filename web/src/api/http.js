@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+// SPDX-License-Identifier: MIT
+
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 

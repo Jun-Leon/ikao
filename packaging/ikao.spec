@@ -19,6 +19,7 @@ PROJECT_DIR = PACKAGING_DIR.parent
 SERVER_DIR = PROJECT_DIR / "server"
 WEB_DIST = PROJECT_DIR / "web" / "dist"
 SEED_JSON = PROJECT_DIR / "data" / "seed_questions.json"
+VERSION_INFO = PACKAGING_DIR / "version_info.txt"
 
 if not WEB_DIST.is_dir():
     raise SystemExit(
@@ -86,6 +87,7 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon=None,
+    version=str(VERSION_INFO) if VERSION_INFO.is_file() else None,
 )
 
 coll = COLLECT(

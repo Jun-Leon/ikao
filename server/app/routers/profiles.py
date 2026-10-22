@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """档案路由：离线多用户的数据隔离载体（不登录，切换档案）。"""
 
 from __future__ import annotations

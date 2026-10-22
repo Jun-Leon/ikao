@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """API 出入参模型（Pydantic v2）。"""
 
 from __future__ import annotations
@@ -30,6 +32,10 @@ class MetaOut(BaseModel):
     question_count: int
     current_profile_id: Optional[int] = None
     current_profile_name: Optional[str] = None
+    # 署名信息（来源：app.about，便于前端展示与产物溯源）
+    author: str = ""
+    copyright: str = ""
+    repository: str = ""
 
 
 # ------------------------------------------------------------------ 题目

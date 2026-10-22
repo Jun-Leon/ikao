@@ -1,3 +1,7 @@
+<!--
+  SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+  SPDX-License-Identifier: MIT
+-->
 <template>
   <div class="page page-wide">
     <h2 class="page-title">{{ isEdit ? `编辑题目 #${questionId}` : '新增题目' }}</h2>

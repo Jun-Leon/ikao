@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """FastAPI 公共依赖：当前档案（离线多用户的核心）。"""
 
 from __future__ import annotations

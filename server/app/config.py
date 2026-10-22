@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2026 梁小军 (GitHub: Jun-Leon)
+# SPDX-License-Identifier: MIT
 """全局配置。
 
 统一从环境变量 / .env 读取配置（前缀 IKAO_），供各模块复用。
