@@ -54,9 +54,14 @@ def normalize_stem(title: str | None, *, keep_latex_cmd: bool = False) -> str:
     return normalize_text(raw)
 
 
-def md5_hash(text: str | None) -> str:
-    """md5 摘要（用于题库指纹、题干精确去重）。"""
-    return hashlib.md5((text or "").encode("utf-8")).hexdigest()
+def md5_hash(text: str | bytes | None) -> str:
+    """md5 摘要（用于题库指纹、题干精确去重）。
+
+    同时支持 ``str`` 与 ``bytes``：导入 CSV / Excel 时直接对文件原始字节取指纹，
+    避免为了算摘要先把二进制解码成文本。
+    """
+    payload = text if isinstance(text, bytes) else (text or "").encode("utf-8")
+    return hashlib.md5(payload).hexdigest()
 
 
 def make_preview(text: str | None, limit: int = 60) -> str:
