@@ -1,0 +1,21 @@
+# 统一换行符策略，避免不同系统协作时出现整文件 diff
+
+# 默认：由 Git 自动识别文本文件，仓库内统一存 LF
+* text=auto
+
+# Windows 专用脚本必须是 CRLF，否则可能执行异常
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# 二进制文件不做换行转换，也不参与 diff
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.xlsx binary
+*.db binary
+*.zip binary
+*.docx binary
+*.pdf binary

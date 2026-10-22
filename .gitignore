@@ -1,0 +1,38 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# ---- Node / 前端 ----
+node_modules/
+web/dist/
+web/.vite/
+npm-debug.log*
+yarn-error.log*
+
+# ---- 打包与构建产物 ----
+build/
+dist/
+release/
+*.spec.bak
+
+# ---- 运行时数据（本地数据库与备份，不入库） ----
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/*.sqlite3
+*.bak
+
+# ---- 环境与本地配置 ----
+.env
+.env.local
+.env.*.local
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

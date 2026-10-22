@@ -1,0 +1,14 @@
+# 后端依赖
+# 使用 >= 下限约束，避免特定 Python 版本没有对应 wheel 时装不上
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+sqlalchemy>=2.0.30
+pydantic>=2.8.0
+pydantic-settings>=2.4.0
+python-multipart>=0.0.9
+rapidfuzz>=3.9.0
+# CSV / Excel 题目导入导出（.xlsx / .xlsm）
+openpyxl>=3.1.2
+
+# 打包用（仅打包机需要，运行时不需要；由 scripts/build_portable.ps1 自动安装）
+# pyinstaller>=6.10.0
